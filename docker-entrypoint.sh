@@ -15,5 +15,5 @@ else
 	curl -s https://download.cobaltstrike.com/downloads/${token}/latest46/cobaltstrike-dist.tgz -o /tmp/cobaltstrike.tgz
 	tar zxf /tmp/cobaltstrike.tgz -C /opt
 	echo ${COBALTSTRIKE_KEY} | /opt/cobaltstrike/update
-	/opt/cobaltstrike/teamserver $IPADDRESS ${COBALTSTRIKE_PASS} /opt/cobaltstrike/profiles/${COBALTSTRIKE_PROFILE} ${COBALTSTRIKE_EXP}
+	/opt/cobaltstrike/teamserver $IPADDRESS ${COBALTSTRIKE_PASS} /opt/cobaltstrike/${COBALTSTRIKE_PROFILE} ${COBALTSTRIKE_EXP}
 fi
