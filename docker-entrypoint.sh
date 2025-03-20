@@ -12,7 +12,7 @@ if [ -f "$FILE" ]; then
 else
 	touch /opt/cobaltstrike/cs-download-check
     token=`curl -s https://download.cobaltstrike.com/download -d "dlkey=${COBALTSTRIKE_KEY}" | grep 'href="/downloads/' | cut -d '/' -f3`
-	curl -s https://download.cobaltstrike.com/downloads/${token}/latest46/cobaltstrike-dist.tgz -o /tmp/cobaltstrike.tgz
+	curl -s https://download.cobaltstrike.com/downloads/${token}/latest410/cobaltstrike-dist.tgz -o /tmp/cobaltstrike.tgz
 	tar zxf /tmp/cobaltstrike.tgz -C /opt
 	echo ${COBALTSTRIKE_KEY} | /opt/cobaltstrike/update
 	/opt/cobaltstrike/teamserver $IPADDRESS ${COBALTSTRIKE_PASS} /opt/cobaltstrike/${COBALTSTRIKE_PROFILE} ${COBALTSTRIKE_EXP}
